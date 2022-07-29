@@ -18,11 +18,11 @@ public with sharing class CaseService {
         }
     }
 
-    public static Map<Id,Integer> countCountries(Map<Id, Case> idCaseMap){// прерйм
+    public static Map<Id,Integer> countCountries(Map<Id, Case> idCaseMap){
         Map<Id,Integer> countries = new Map<Id, Integer>();
         for(Id caseId : idCaseMap.keySet()){
             Case c = idCaseMap.get(caseId);
-            if(c.Status == 'Closed' && c.SuccessMessage__c==null){
+            if(c.Status == 'Closed'){
                 if(!countries.containsKey(c.Country__c)){
                     countries.put(c.Country__c,1);
                 }else{

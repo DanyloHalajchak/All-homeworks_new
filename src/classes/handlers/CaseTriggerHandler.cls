@@ -8,9 +8,9 @@ public with sharing class CaseTriggerHandler {
             when AFTER_UPDATE{
                 CaseService.UpdateNumberOfClosedCasesInCountryAndSetSuccessMessage(idCaseMap);
             }
-            when AFTER_INSERT{
-                CaseService.UpdateNumberOfClosedCasesInCountryAndSetSuccessMessage(idCaseMap);
-            }
+//            when AFTER_INSERT{
+//                CaseService.UpdateNumberOfClosedCasesInCountryAndSetSuccessMessage(idCaseMap);
+//            }
         }
     }
 }
