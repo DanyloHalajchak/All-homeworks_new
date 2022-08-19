@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Converter</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:800|Poppins:700" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js"></script>
+</head>
+<body>
+    <div class="converter-wrapper">
+        <h1>DISTANCE  <br> CONVERTER</h1>
+
+        <form name="property_form">
+        <span>
+          <select class="select-property" name="the_menu">
+              <option value="inches-to-centimeters">inches to centimeters</option>
+              <option value="feet-to-centimeters">feet to centimeters</option>
+              <option value="yards-to-meters">yards to meters</option>
+              <option value="miles-to-kilometers">miles to kilometers</option>
+          </select>
+        </span>
+        </form>
+
+        <div class="converter-side-a">
+            <input type="text" class="numbersonly" id="aValue" maxlength="20" value="0" onkeyup="convertDistance(document.getElementById('aValue'), document.getElementById('bValue'))">
+        </div>
+
+        <div class="converter-equals">
+            <p>=</p>
+        </div>
+
+        <div class="converter-side-b">
+            <input type="text" class="numbersonly" id="bValue" maxlength="20" value="0" onkeyup="convertDistance(document.getElementById('bValue'), document.getElementById('aValue'))">
+        </div>
+    </div>
+</body>
+</html>
