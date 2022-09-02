@@ -1,0 +1,24 @@
+<template>
+    <lightning-card title='related Contacts (HW-16)'>
+        <template if:true={contacts.data}>
+            <ul class='slds-p-left_medium'>
+                <template for:each={contacts.data} for:item='contact'>
+                    <li key={contact.Id} class='slds-p-bottom_medium'>
+                        <c-related-contact contact={contact}></c-related-contact>
+                    </li>
+                </template>
+            </ul>
+        </template>
+        <div class="slds-m-left_medium">
+            <lightning-button label='Add Contact' onclick={addContact}></lightning-button>
+        </div>
+        <template if:true={showForm}>
+            <div class='slds-p-left_medium'>
+                <lightning-input label='Last Name' onchange={handleLastNameChange}></lightning-input>
+                <lightning-button label='Create Contact' onclick={createContact}></lightning-button>
+            </div>
+        </template>
+    </lightning-card>
+</template>
+
+
