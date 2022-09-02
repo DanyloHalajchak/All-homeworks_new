@@ -1,0 +1,24 @@
+<template>
+    <lightning-card title='Diary'>
+        <template if:true={diaries.data}>
+            <ul class='slds-p-left_medium'>
+                <template for:each={diaries.data} for:item='diary'>
+                    <li key={diary.Id} class='slds-p-bottom_medium'>
+                        <c-diary diary={diary} onclicked={removeDiary}></c-diary>
+                    </li>
+                </template>
+            </ul>
+        </template>
+        <div class="slds-m-left_medium">
+            <lightning-button label='Add Diary' onclick={addDiary}></lightning-button>
+        </div>
+        <template if:true={showForm}>
+            <div class='slds-p-left_medium'>
+                <lightning-input label='Note' onchange={handleNoteChange}></lightning-input>
+                <lightning-button label='Create Diary' onclick={createDiary}></lightning-button>
+            </div>
+        </template>
+    </lightning-card>
+</template>
+
+
